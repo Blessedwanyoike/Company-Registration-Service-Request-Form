@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Company Registration / Service Request Form</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial,sans-serif;
+    }
+
+    body{
+        background:#0066ff;
+        padding:30px;
+    }
+
+    .container{
+        width:80%;
+        max-width:900px;
+        margin:auto;
+        background:rgb(255, 255, 255);
+        padding:25px;
+        border-radius:10px;
+        box-shadow:0 0 10px rgba(0,0,0,0.2);
+    }
+
+    h1{
+        text-align:center;
+        margin-bottom:20px;
+        color:#333;
+    }
+
+    fieldset{
+        border:2px solid #2f00ff;
+        margin-bottom:20px;
+        padding:20px;
+        border-radius:8px;
+    }
+
+    legend{
+        font-weight:bold;
+        color:#0d00ff;
+        padding:0 10px;
+    }
+
+    label{
+        display:block;
+        margin-top:10px;
+        font-weight:bold;
+    }
+
+    input,
+    select,
+    textarea{
+        width:100%;
+        padding:10px;
+        margin-top:5px;
+        border:1px solid #ccc;
+        border-radius:5px;
+    }
+
+    .inline{
+        display:inline-block;
+        width:auto;
+        margin-right:10px;
+    }
+
+    .options{
+        margin-top:10px;
+    }
+
+    .buttons{
+        text-align:center;
+    }
+
+    button{
+        padding:12px 25px;
+        border:none;
+        border-radius:5px;
+        cursor:pointer;
+        font-size:16px;
+        margin:10px;
+    }
+
+    .submit{
+        background:#4CAF50;
+        color:white;
+    }
+
+    .reset{
+        background:#f44336;
+        color:white;
+    }
+
+    button:hover{
+        opacity:0.8;
+    }
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Company Registration / Service Request Form</h1>
+
+<form>
+
+<!-- Personal Information -->
+
+<fieldset>
+
+<legend>Personal Information</legend>
+
+<label for="fullname">Full Name</label>
+<input
+type="text"
+id="fullname"
+name="fullname"
+required
+minlength="3"
+maxlength="50"
+pattern="[A-Za-z ]+"
+placeholder="Enter full name">
+
+<label for="email">Email Address</label>
+<input
+type="email"
+id="email"
+name="email"
+required
+placeholder="example@email.com">
+
+<label for="phone">Phone Number</label>
+<input
+type="tel"
+id="phone"
+name="phone"
+required
+pattern="[0-9]{10}"
+placeholder="0712345678">
+
+</fieldset>
+
+
+<!-- Company Information -->
+
+<fieldset>
+
+<legend>Company Information</legend>
+
+<label for="companyname">Company Name</label>
+<input
+type="text"
+id="companyname"
+name="companyname"
+required
+minlength="2"
+maxlength="50">
+
+<label for="website">Company Website</label>
+<input
+type="url"
+id="website"
+name="website"
+required
+placeholder="https://abcdef.com">
+
+<label for="size">Company Size</label>
+<select id="size" name="size" required>
+<option value="">Select Company Size</option>
+<option value="1-10">1-10 Employees</option>
+<option value="11-50">11-50 Employees</option>
+<option value="51-100">51-100 Employees</option>
+<option value="101-500">101-500 Employees</option>
+<option value="500+">500+ Employees</option>
+</select>
+
+<label for="industry">Industry</label>
+<input
+type="text"
+id="industry"
+name="industry"
+required
+maxlength="30">
+
+</fieldset>
+
+
+<!-- Service Request -->
+
+<fieldset>
+
+<legend>Service Request</legend>
+
+<label>Service Type</label>
+
+<div class="options">
+
+<input class="inline"
+type="radio"
+id="web"
+name="service"
+value="web"
+required>
+
+<label class="inline" for="web">
+Web Development
+</label>
+
+<input class="inline"
+type="radio"
+id="marketing"
+name="service"
+value="marketing">
+
+<label class="inline" for="marketing">
+Marketing
+</label>
+
+<input class="inline"
+type="radio"
+id="consulting"
+name="service"
+value="consulting">
+
+<label class="inline" for="consulting">
+Consulting
+</label>
+
+</div>
+
+
+<label>Preferred Contact Method</label>
+
+<div class="options">
+
+<input class="inline"
+type="checkbox"
+id="emailcontact"
+name="contact"
+value="email">
+
+<label class="inline"
+for="emailcontact">
+Email
+</label>
+
+<input class="inline"
+type="checkbox"
+id="phonecontact"
+name="contact"
+value="phone">
+
+<label class="inline"
+for="phonecontact">
+Phone
+</label>
+
+<input class="inline"
+type="checkbox"
+id="smscontact"
+name="contact"
+value="sms">
+
+<label class="inline"
+for="smscontact">
+SMS
+</label>
+
+</div>
+
+
+<label for="date">
+Appointment Date
+</label>
+
+<input
+type="date"
+id="date"
+name="date"
+required
+min="2026-01-01"
+max="2080-12-31">
+
+<label for="time">
+Appointment Time
+</label>
+
+<input
+type="time"
+id="time"
+name="time"
+required>
+
+<label for="budget">
+Budget Range (KES)
+</label>
+
+<input
+type="number"
+id="budget"
+name="budget"
+required
+min="100"
+max="10000000">
+
+</fieldset>
+
+
+<!-- Message and Agreement -->
+
+<fieldset>
+
+<legend>Message and Agreement</legend>
+
+<label for="message">
+Additional Information
+</label>
+
+<textarea
+id="message"
+name="message"
+rows="5"
+maxlength="5000"
+placeholder="Enter your message here">
+</textarea>
+
+<div style="margin-top:15px;">
+
+<input
+class="inline"
+type="checkbox"
+id="terms"
+name="terms"
+required>
+
+<label class="inline"
+for="terms">
+I agree to the Terms and Conditions
+</label>
+
+</div>
+
+</fieldset>
+
+
+<div class="buttons">
+
+<button type="submit" class="submit">
+Submit
+</button>
+
+<button type="reset" class="reset">
+Reset
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>
